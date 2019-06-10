@@ -1,5 +1,15 @@
 :host {
     display: block;
     position: relative;
-    padding-left: 10px;
+    margin-left: 15px;
+}
+
+.tree {
+    &__item {
+        padding: 5px;
+    }
+
+    &__item:hover {
+        background-color: #d7e8f8;
+    }
 }

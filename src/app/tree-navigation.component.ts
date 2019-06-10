@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Node, NodeFactory } from 'src/modules/document';
+import { Node, NodeFactory, DocumentService } from 'src/modules/document';
 import { Tree } from 'src/modules/common';
 
 @Component({
@@ -12,7 +12,8 @@ export class TreeNavigationComponent implements OnInit {
     @Input() tree: Tree<Node>;
 
     constructor(
-        protected nodeFactory: NodeFactory
+        protected nodeFactory: NodeFactory,
+        protected documentService: DocumentService
     ) { }
 
     ngOnInit() { }
@@ -29,5 +30,10 @@ export class TreeNavigationComponent implements OnInit {
             return;
         }
         parentTree.removeChild(tree);
+    }
+
+    select(node: Node): void
+    {
+        this.documentService.select(node);
     }
 }

@@ -1,14 +1,16 @@
-<div>
-    <div class="flexbox flexbox--row">
-        <div class="flex">{{tree.get().getName()}}</div>
-        <div toggle>
-            <div>+</div>
-            <div #toToggle style="display: none;">
-                <div (click)="add('container')">Container</div>
-                <div (click)="add('button')">Button</div>
+<div class="">
+    <div class="flexbox flexbox--row flexbox--c tree__item">
+        <div class="flex" (click)="select(tree.get())">{{tree.get().getName()}}</div>
+        <div class="flexbox flexbox--row">
+            <div toggle class="gap-h">
+                <div class="clickable clickable--object flexbox flexbox--cc">+</div>
+                <div #toToggle class="options" style="display: none;">
+                    <div class="options__item" (click)="add('container')">Container</div>
+                    <div class="options__item" (click)="add('button')">Button</div>
+                </div>
             </div>
+            <div (click)="remove(tree)" class="clickable clickable--object gap-h flexbox flexbox--cc"><span class="rotate-45">+</span></div>
         </div>
-        <div (click)="remove(tree)">x</div>
     </div>
     
     <div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ContainerNode } from './container/container.node';
 import { TreeStructure, Tree } from 'src/modules/common';
-import { Node } from 'src/modules/document';
+import { Node, DocumentService } from 'src/modules/document';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +11,13 @@ import { Node } from 'src/modules/document';
 export class AppComponent {
   title = 'abstract-wireframe';
   public root: Tree<Node>;
+  public selectedNode: Node;
 
-  constructor()
+  constructor(
+    documentService: DocumentService
+  )
   {
+    this.selectedNode = null;
     let rootNode: ContainerNode = new ContainerNode();
     rootNode.setFlexDirection("row");
 
@@ -21,12 +25,9 @@ export class AppComponent {
     this.root.appendChild(new ContainerNode());
     this.root.appendChild(new ContainerNode());
 
-    // setInterval(() => {
-    //   if (this.root.getParams().flexDirection == "row") {
-    //     this.root.setFlexDirection("column");
-    //   } else {
-    //     this.root.setFlexDirection("row");
-    //   }
-    // }, 2000);
+    documentService.on("select")
+      .subscribe((selected: Node) => {
+        this.selectedNode = selected;
+      });
   }
 }

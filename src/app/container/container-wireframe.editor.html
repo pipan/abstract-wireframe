@@ -1,0 +1,6 @@
+<div>
+    <select [ngModel]="node.getParams().flexDirection" (ngModelChange)="node.setFlexDirection($event)">
+        <option>column</option>
+        <option>row</option>
+    </select>
+</div>
