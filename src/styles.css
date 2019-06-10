@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.flexbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation {
+    width: 300px;
+}
+
+.content {
+    flex: 1 1 auto;
+}

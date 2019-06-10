@@ -1,0 +1,17 @@
+<div>
+    <div class="flexbox flexbox--row">
+        <div class="flex">{{tree.get().getName()}}</div>
+        <div toggle>
+            <div>+</div>
+            <div #toToggle style="display: none;">
+                <div (click)="add('container')">Container</div>
+                <div (click)="add('button')">Button</div>
+            </div>
+        </div>
+        <div (click)="remove(tree)">x</div>
+    </div>
+    
+    <div>
+        <treeNavigation [tree]="child" *ngFor="let child of tree.getChildren()"></treeNavigation>
+    </div>
+</div>

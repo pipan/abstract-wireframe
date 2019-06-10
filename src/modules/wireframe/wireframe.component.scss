@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.wireframe {
+    &__body {
+        position: relative;
+        padding: 20px;
+        border: solid 1px #c4dffa;
+        display: flex;
+        transform: all ease 200ms;
+        min-height: 30px;
+    }
+
+    &__name {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding: 3px;
+        background-color: #c4dffa;
+        transform: all ease 200ms;
+    }
+}
+
+:host:hover > .wireframe > .wireframe__body {
+    border-color: #71ade9;
+}
+
+:host:hover > .wireframe > .wireframe__name {
+    background-color: #71ade9;
+}
