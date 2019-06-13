@@ -21,4 +21,9 @@ export class NodeFactory
         let classType: Type<Node> = this.prototypes.get(nodeType);
         return new classType();
     }
+
+    availableKeys(): Array<string>
+    {
+        return Array.from(this.prototypes.keys());
+    }
 }

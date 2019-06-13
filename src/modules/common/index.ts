@@ -6,4 +6,3 @@ export { Listenable } from './Listenable';
 export { Listener } from './Listener';
 export { SingleSubscriptionListener } from './SingleSubscritionListener';
 export { ListenableEmitter } from './ListenableEmitter';
-export { StringComponentResolver } from './string-component-resolver.service';

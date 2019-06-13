@@ -1,7 +1,7 @@
 <div class="flexbox">
   <div class="navigation">
     <treeNavigation [tree]="root"></treeNavigation>
-    <wireframeEditor [node]="selectedNode"></wireframeEditor>
+    <ng-template #wireframeEditor></ng-template>
   </div>
   <div class="content">
     <containerNode [tree]="root"></containerNode>

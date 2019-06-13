@@ -1,4 +1,4 @@
-<div class="wireframe">
+<div class="wireframe" [ngClass]="{'wireframe--selected': isSelected}" (click)="select(tree.get(), $event)">
     <div class="wireframe__name">{{tree.get().getName()}}</div>
     <div class="wireframe__body" [style.flex-direction]="flexDirection">
         <ng-template wireframe-body></ng-template>

@@ -1,13 +1,13 @@
-import { WireframeEditorInterface } from "src/modules/wireframe";
 import { Node } from "src/modules/document";
 import { Component } from "@angular/core";
 import { ContainerNode } from "./container.node";
 
 @Component({
     selector: 'containerWireframeEditor',
-    templateUrl: 'container-wireframe.editor.html'
+    templateUrl: 'container-wireframe.editor.html',
+    inputs: ['node']
 })
-export class ContainerWireframeEditor implements WireframeEditorInterface
+export class ContainerWireframeEditor
 {
     public node: ContainerNode;
 

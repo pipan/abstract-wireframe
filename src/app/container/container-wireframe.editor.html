@@ -1,6 +1,13 @@
-<div>
-    <select [ngModel]="node.getParams().flexDirection" (ngModelChange)="node.setFlexDirection($event)">
-        <option>column</option>
-        <option>row</option>
-    </select>
+<div class="">
+    <div class="flexbox flexbox--row flexbox--c gap-v">
+        <label for="direction" class="flex">direction</label>
+        <select id="direction" [ngModel]="node.getParams().flexDirection" (ngModelChange)="node.setFlexDirection($event)">
+            <option>column</option>
+            <option>row</option>
+        </select>
+    </div>
+    <div class="flexbox flexbox--row flexbox--c gap-v">
+            <label for="name" class="flex">name</label>
+            <input id="name" type="text" [ngModel]="node.getName()" (ngModelChange)="node.rename($event)">
+        </div>
 </div>

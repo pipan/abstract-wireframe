@@ -10,13 +10,17 @@ import { Tree } from 'src/modules/common';
 
 export class TreeNavigationComponent implements OnInit {
     @Input() tree: Tree<Node>;
+    public nodeFactories: Array<string>;
 
     constructor(
         protected nodeFactory: NodeFactory,
         protected documentService: DocumentService
     ) { }
 
-    ngOnInit() { }
+    ngOnInit()
+    {
+        this.nodeFactories = this.nodeFactory.availableKeys();
+    }
 
     add(name: string): void
     {

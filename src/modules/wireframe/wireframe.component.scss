@@ -24,10 +24,10 @@
     }
 }
 
-:host:hover > .wireframe > .wireframe__body {
+:host:hover > .wireframe > .wireframe__body, .wireframe--selected > .wireframe__body {
     border-color: #71ade9;
 }
 
-:host:hover > .wireframe > .wireframe__name {
+:host:hover > .wireframe > .wireframe__name, .wireframe--selected > .wireframe__name {
     background-color: #71ade9;
 }

@@ -1,12 +1,11 @@
 <div class="">
-    <div class="flexbox flexbox--row flexbox--c tree__item">
-        <div class="flex" (click)="select(tree.get())">{{tree.get().getName()}}</div>
+    <div class="flexbox flexbox--row flexbox--c tree__item" (click)="select(tree.get())">
+        <div class="flex">{{tree.get().getName()}}</div>
         <div class="flexbox flexbox--row">
             <div toggle class="gap-h">
                 <div class="clickable clickable--object flexbox flexbox--cc">+</div>
                 <div #toToggle class="options" style="display: none;">
-                    <div class="options__item" (click)="add('container')">Container</div>
-                    <div class="options__item" (click)="add('button')">Button</div>
+                    <div *ngFor="let nodeFactoryName of nodeFactories" class="options__item" (click)="add(nodeFactoryName)">{{nodeFactoryName}}</div>
                 </div>
             </div>
             <div (click)="remove(tree)" class="clickable clickable--object gap-h flexbox flexbox--cc"><span class="rotate-45">+</span></div>
